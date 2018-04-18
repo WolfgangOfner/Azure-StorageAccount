@@ -62,7 +62,6 @@ namespace AzureStorageAccount
             catch (StorageException ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
             }
         }
 
@@ -72,7 +71,7 @@ namespace AzureStorageAccount
             const string fileToUpload = "FilePath";
             // Destination
             var blockBlob = container.GetBlockBlobReference("BlobName");
-            // Create or overwrite the "HelloWorldBlob" blob with contents from a local file.
+            // Create or overwrite the "BlobName" blob with contents from a local file.
             using (var fileStream = File.OpenRead(fileToUpload))
             {
                 blockBlob.UploadFromStream(fileStream);
